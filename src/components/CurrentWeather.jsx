@@ -16,7 +16,7 @@ export function CurrentWeather() {
             <div>
               <div className="d-flex gap-1 align-items-center display-1">
                 <img
-                  src="/assets/status/MostlySunnyDay.svg"
+                  src="/assets/status/partly-cloudy-day.svg"
                   alt=""
                   style={{ height: '1.8em' }}
                 />
