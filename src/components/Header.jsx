@@ -13,7 +13,7 @@ export default function Header({ fetchWeatherInfo, changeMode }) {
       let latitude = position.coords.latitude;
       let longitude = position.coords.longitude;
       try {
-        let url = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=5&appid=88d8c3a16490d6e5ba6e293820f3a903`;
+        let url = `http://1api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=5&appid=88d8c3a16490d6e5ba6e293820f3a903`;
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);

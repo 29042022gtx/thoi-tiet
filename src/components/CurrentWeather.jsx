@@ -1,13 +1,18 @@
+import { format } from 'date-fns';
 import { getDistanceString, getTemperatureString } from '../js/utils.js';
 
 export default function CurrentWeather({ weatherInfo, mode }) {
   return (
-    <section>
-      <div className="content-wrapper">
-        <div className=" bg-body-tertiary p-3 rounded-3">
+    <section className="content-wrapper">
+      <div className="d-md-flex gap-1">
+        <div
+          className="bg-body-tertiary p-3 rounded-3"
+          style={{ flex: 6 }}
+        >
           <b>
             <small>
-              Thời tiết hiện tại{' '}
+              Thời tiết hiện tại ngày&nbsp;
+              {format(new Date(weatherInfo.days[0].datetime), 'dd/MM')}
             </small>
           </b>
           <div className="d-sm-flex gap-3 align-items-center">
@@ -84,6 +89,21 @@ export default function CurrentWeather({ weatherInfo, mode }) {
               {weatherInfo.currentConditions.dew}°
             </div>
           </div>
+        </div>
+        <div style={{ flex: 4 }}>
+          <iframe
+            src="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat=10.7769&lon=106.7009&zoom=5"
+            frameborder="0"
+            allowfullscreen
+            className="rounded-3"
+            style={{
+              width: '100%',
+              height: '100%',
+              minHeight: '300px',
+              maxHeight: '100%',
+              overflow: 'hidden',
+            }}
+          ></iframe>
         </div>
       </div>
     </section>
